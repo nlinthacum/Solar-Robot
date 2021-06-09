@@ -52,3 +52,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_run" TYPE FILE FILES "/home/pi/catkin_ws/src/motor_run/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_run" TYPE PROGRAM FILES "/home/pi/catkin_ws/build/motor_run/catkin_generated/installspace/publisher_node.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_run" TYPE PROGRAM FILES "/home/pi/catkin_ws/build/motor_run/catkin_generated/installspace/subscriber_node.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_run" TYPE PROGRAM FILES "/home/pi/catkin_ws/build/motor_run/catkin_generated/installspace/motor_test.py")
+endif()
+

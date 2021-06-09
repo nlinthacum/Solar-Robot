@@ -10,22 +10,21 @@ from std_msgs.msg import String
 def publisher():
     pub	= rospy.Publisher('keyboard_publish', String, queue_size=10)
 
-    rate	= rospy.Rate(50) #should be 1 hz
+    rate	= rospy.Rate(1)
 
     msg_to_publish = Char()
     
-    
+    command = getch.getch()
 
     while not rospy.is_shutdown():
-        command = getch.getch()
-    
+       # command = getch.getch()
         
         char_to_publish = "Publishing %c"%command
 
       #  msg_to_publish.data = char_to_publish
-        pub.publish(command)
+        pub.publish("Hello World")
 
-        rospy.loginfo(command)
+        rospy.loginfo(char_to_publish)
 
         rate.sleep()
 
