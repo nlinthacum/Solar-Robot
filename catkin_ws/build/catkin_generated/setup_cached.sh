@@ -7,4 +7,8 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH='/home/pi/catkin_ws/devel:/opt/ros/noetic'
+export LD_LIBRARY_PATH='/home/pi/catkin_ws/devel/lib:/opt/ros/noetic/lib'
+export PKG_CONFIG_PATH='/home/pi/catkin_ws/devel/lib/pkgconfig:/opt/ros/noetic/lib/pkgconfig'
 export PWD='/home/pi/catkin_ws/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/pi/catkin_ws/devel/share/common-lisp'
