@@ -8,7 +8,7 @@ from std_msgs.msg import String
 
 
 def publisher():
-    pub	= rospy.Publisher('keyboard_publish', String, queue_size=10)
+    pub	= rospy.Publisher('keyboard_publish', String, queue_size=1)
 
     rate	= rospy.Rate(50) #should be 1 hz
 
