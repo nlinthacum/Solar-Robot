@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+#this is the main script
 import rospy
 from time import sleep
 import RPi.GPIO as GPIO
