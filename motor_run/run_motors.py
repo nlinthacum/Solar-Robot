@@ -27,8 +27,8 @@ GPIO.output(in2,GPIO.LOW)
 GPIO.output(in3,GPIO.LOW)
 GPIO.output(in4,GPIO.LOW)
 
-p=GPIO.PWM(enA,1000)
-q=GPIO.PWM(enB,1000)
+p=GPIO.PWM(enA, 2200)
+q=GPIO.PWM(enB, 2200)
 p.start(25)
 q.start(25)
 
