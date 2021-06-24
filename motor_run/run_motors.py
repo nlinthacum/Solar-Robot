@@ -27,10 +27,10 @@ GPIO.output(in2,GPIO.LOW)
 GPIO.output(in3,GPIO.LOW)
 GPIO.output(in4,GPIO.LOW)
 
-p=GPIO.PWM(enA, 2200)
-q=GPIO.PWM(enB, 2200)
-p.start(25)
-q.start(25)
+p=GPIO.PWM(enA, 600)
+q=GPIO.PWM(enB, 600)
+p.start(75)
+q.start(75)
 
 
 
@@ -46,6 +46,18 @@ def callback_function(message):
     if command == 'w':
         forward_motor()
         rospy.loginfo("forward")
+        
+    if command == 'a':
+        turn_left()
+        rospy.loginfo("left")
+    
+    if command == 'd':
+        turn_right()
+        rospy.loginfo("right")
+    
+    if command == 's':
+        backward_motor()
+        rospy.loginfo("backward")
 
 def forward_motor():
     print("I'm going forward")
@@ -56,6 +68,36 @@ def forward_motor():
     sleep(.5)
     GPIO.output(in1,GPIO.LOW)
     GPIO.output(in3,GPIO.LOW)
+    
+def backward_motor():
+    print("I'm going backkwards")
+    GPIO.output(in1,GPIO.LOW)
+    GPIO.output(in2,GPIO.HIGH)
+    GPIO.output(in3,GPIO.LOW)
+    GPIO.output(in4,GPIO.HIGH)
+    sleep(.5)
+    GPIO.output(in2,GPIO.LOW)
+    GPIO.output(in4,GPIO.LOW)
+    
+def turn_left():
+    print("I'm turning left")
+    GPIO.output(in1,GPIO.LOW)
+    GPIO.output(in2,GPIO.HIGH)
+    GPIO.output(in3,GPIO.HIGH)
+    GPIO.output(in4,GPIO.LOW)
+    sleep(.5)
+    GPIO.output(in2,GPIO.LOW)
+    GPIO.output(in3,GPIO.LOW)
+    
+def turn_right():
+    print("I'm turning right")
+    GPIO.output(in1,GPIO.HIGH)
+    GPIO.output(in2,GPIO.LOW)
+    GPIO.output(in3,GPIO.LOW)
+    GPIO.output(in4,GPIO.HIGH)
+    sleep(.5)
+    GPIO.output(in1,GPIO.LOW)
+    GPIO.output(in4,GPIO.LOW)
     
     
 

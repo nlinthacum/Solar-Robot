@@ -108,11 +108,11 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
-catkin_install_python(PROGRAMS publisher_node.py
+catkin_install_python(PROGRAMS keyboard_publisher.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-catkin_install_python(PROGRAMS subscriber_node.py
+catkin_install_python(PROGRAMS keyboard_subscriber.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

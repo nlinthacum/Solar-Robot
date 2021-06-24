@@ -1,18 +1,24 @@
-#Libraries
+#!/usr/bin/env python3
+
+import rospy
+import getch
 import RPi.GPIO as GPIO
 import time
- 
-#GPIO Mode (BOARD / BCM)
+
+from std_msgs.msg import Char
+from std_msgs.msg import String
+from std_msgs.msg import Float32
+
 GPIO.setmode(GPIO.BCM)
  
 #set GPIO Pins
-GPIO_TRIGGER = 18
-GPIO_ECHO = 24
+GPIO_TRIGGER = 19
+GPIO_ECHO = 26
  
 #set GPIO direction (IN / OUT)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
- 
+
 def distance():
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, True)
@@ -40,15 +46,36 @@ def distance():
  
     return distance
  
-if __name__ == '__main__':
-    try:
-        while True:
-            dist = distance()
-            print ("Measured Distance = %.1f cm" % dist)
-            time.sleep(1)
- 
-        # Reset by pressing CTRL + C
-    except KeyboardInterrupt:
-        print("Measurement stopped by User")
-        GPIO.cleanup()
+
+
+def publisher():
+    pub	= rospy.Publisher('ultrasonic_publish1', Float32, queue_size=1)
+
+    rate	= rospy.Rate(50) #should be 1 hz
+
+    msg_to_publish = Float32()
+    
+    
+
+    while not rospy.is_shutdown():
+        distance = distance()
+    
+        
+        char_to_publish = "Publishing %c"%distance
+
+      #  msg_to_publish.data = char_to_publish
+        pub.publish(distance)
+
+        rospy.loginfo(distance)
+
+        rate.sleep()
+
+
+if __name__== "__main__":
+    rospy.init_node("ultrasonic_publish1")
+    publisher()
+
+
+
+
 
