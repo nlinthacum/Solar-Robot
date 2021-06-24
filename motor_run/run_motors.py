@@ -65,7 +65,7 @@ def forward_motor():
     GPIO.output(in2,GPIO.LOW)
     GPIO.output(in3,GPIO.HIGH)
     GPIO.output(in4,GPIO.LOW)
-    sleep(.5)
+    sleep(.1)
     GPIO.output(in1,GPIO.LOW)
     GPIO.output(in3,GPIO.LOW)
     
@@ -75,7 +75,7 @@ def backward_motor():
     GPIO.output(in2,GPIO.HIGH)
     GPIO.output(in3,GPIO.LOW)
     GPIO.output(in4,GPIO.HIGH)
-    sleep(.5)
+    sleep(.1)
     GPIO.output(in2,GPIO.LOW)
     GPIO.output(in4,GPIO.LOW)
     
@@ -85,7 +85,7 @@ def turn_left():
     GPIO.output(in2,GPIO.HIGH)
     GPIO.output(in3,GPIO.HIGH)
     GPIO.output(in4,GPIO.LOW)
-    sleep(.5)
+    sleep(.1)
     GPIO.output(in2,GPIO.LOW)
     GPIO.output(in3,GPIO.LOW)
     
@@ -95,7 +95,7 @@ def turn_right():
     GPIO.output(in2,GPIO.LOW)
     GPIO.output(in3,GPIO.LOW)
     GPIO.output(in4,GPIO.HIGH)
-    sleep(.5)
+    sleep(.1)
     GPIO.output(in1,GPIO.LOW)
     GPIO.output(in4,GPIO.LOW)
     
