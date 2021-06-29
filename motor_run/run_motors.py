@@ -27,10 +27,10 @@ GPIO.output(in2,GPIO.LOW)
 GPIO.output(in3,GPIO.LOW)
 GPIO.output(in4,GPIO.LOW)
 
-p=GPIO.PWM(enA, 600)
+p=GPIO.PWM(enA, 600) #600 
 q=GPIO.PWM(enB, 600)
 p.start(75)
-q.start(75)
+q.start(75) #75 is what I've been using
 
 
 
@@ -70,7 +70,7 @@ def forward_motor():
     GPIO.output(in3,GPIO.LOW)
     
 def backward_motor():
-    print("I'm going backkwards")
+    print("I'm going backwards")
     GPIO.output(in1,GPIO.LOW)
     GPIO.output(in2,GPIO.HIGH)
     GPIO.output(in3,GPIO.LOW)
