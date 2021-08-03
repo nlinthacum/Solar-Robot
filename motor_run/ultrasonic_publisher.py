@@ -98,9 +98,9 @@ def publisher():
     
         
        # char_to_publish = sens_distance1
-       # char_to_publish = sens_distance2
+        #char_to_publish = sens_distance2
 
-      #  msg_to_publish.data = char_to_publish
+       # msg_to_publish.data = char_to_publish
         pub.publish(sens_distance1)
         pub2.publish(sens_distance2)
 
@@ -113,8 +113,8 @@ def publisher():
 
 
 if __name__== "__main__":
-    #rospy.init_node("ultrasonic_publish1") #idk if this is right
-    rospy.init_node("ultrasonic_publish")
+    rospy.init_node("ultrasonic_publish1") #idk if this is right
+    rospy.init_node("ultrasonic_publish2")
     publisher()
 
 
